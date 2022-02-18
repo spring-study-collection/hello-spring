@@ -20,6 +20,7 @@ public class MemberController {
     @Autowired //생성자 호출시 스프링 컨테이너에 있는 memberService(스프링 빈)을 가져와 연결시켜줌
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
+        System.out.println("memberService = " + memberService.getClass()); //실제 proxy가 주입되는지 확인
     }
 
     //2. DI (필드 주입)
